@@ -22,17 +22,19 @@ export class AppComponent implements OnInit {
   }
 
     ngOnInit() {
-        console.log(this.coursesService);
+        // console.log(this.coursesService);
 
-        const params = new HttpParams()
-            .set('page', '1')
-            .set('pageSize', '10');
+        // const params = new HttpParams()
+        //     .set('page', '1')
+        //     .set('pageSize', '10');
         
-        // this.http.get('/api/courses', {params})
-        //     .subscribe(
-        //         val => this.courses = val
-        //     );
-        this.courses$ = this.http.get<Course[]>('api/courses', {params});
+        // // this.http.get('/api/courses', {params})
+        // //     .subscribe(
+        // //         val => this.courses = val
+        // //     );
+        // this.courses$ = this.http.get<Course[]>('api/courses', {params});
+
+        this.courses$ = this.coursesService.loadCourses();
     }
 
 
